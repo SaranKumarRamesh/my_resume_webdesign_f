@@ -1,3 +1,5 @@
+// Run this file first before ng serve using node server.js
+
 const express = require('express');
 const app = express();
 
