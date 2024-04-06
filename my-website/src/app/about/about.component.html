@@ -5,15 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  <main id="about">
-    <section class="page-layout">
-      <iframe class="iframe-container" src="http://localhost:3000/waves-design.html"></iframe>
+<body class="about-container">
+
+  <!-- Header -->
+  <header>
+    <h1 class="name">Saran Kumar Ramesh</h1>
+    <span></span> <!-- Separator -->
+    <p class="quote">"Code is a language of possibility, where ideas become reality"</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav-container">
+    <ul>
+      <li><a routerLink="/"><img src="../../assets/11.png" alt="Home"></a> <a routerLink="/">Home</a></li>
+      <li><a routerLink="/about"><img src="../../assets/4.png" alt="About"></a> <a routerLink="/about">About</a></li>
+      <li><a routerLink="/projects"><img src="../../assets/5.png" alt="Projects/Skills"></a> <a routerLink="/projects">Projects/Skills</a></li>
+      <li><a routerLink="/experience"><img src="../../assets/9.png" alt="Experience/Education"></a> <a routerLink="/experience">Experience/Education</a></li>
+      <li><a routerLink="/contact"><img src="../../assets/14.png" alt="Contact Me"></a> <a routerLink="/contact">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Content Section -->
+    <section>
+      <h2>"I'm a seasoned full-stack developer proficient in frontend, backend, and DevOps.
+          With expertise spanning all areas of development, I craft robust solutions tailored
+          to meet diverse project needs."</h2>
+
+      <p>Click one or more technologies to mix and match my skills.</p>
+      <div class="buttons">
+        <button>Frontend</button>
+        <button>Backend</button>
+        <button>DevOps</button>
+      </div>
     </section>
   </main>
 
-  <footer>
 
+  <section class="page-layout">
+    <iframe class="iframe-container" src="http://localhost:3000/waves-design.html"></iframe>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>It's not the end. Keep scrolling...</p>
   </footer>
 </body>
 </html>
