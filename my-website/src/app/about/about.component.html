@@ -29,15 +29,14 @@
   <main>
     <!-- Content Section -->
     <section>
-      <h2>"I'm a seasoned full-stack developer proficient in frontend, backend, and DevOps.
-          With expertise spanning all areas of development, I craft robust solutions tailored
-          to meet diverse project needs."</h2>
+      <h2 class="main-content">{{ mainContent }}</h2>
 
-      <p>Click one or more technologies to mix and match my skills.</p>
-      <div class="buttons">
-        <button>Frontend</button>
-        <button>Backend</button>
-        <button>DevOps</button>
+      <p>Click one or more of the below technologies to mix and match my skills,</p>
+
+      <div class="design-buttons">
+        <button [class.active]="frontendClicked" (click)="toggleFrontend()">Frontend</button>
+        <button [class.active]="backendClicked" (click)="toggleBackend()">Backend</button>
+        <button [class.active]="devopsClicked" (click)="toggleDevops()">DevOps</button>
       </div>
     </section>
   </main>
@@ -49,7 +48,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>It's not the end. Keep scrolling...</p>
+    <p>It's just the beginning.<span> Keep scrolling</span> to know more the projects i worked on and skills i got from them...</p>
   </footer>
 </body>
 </html>

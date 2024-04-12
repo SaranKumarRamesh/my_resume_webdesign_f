@@ -111,8 +111,8 @@ img {
   display: block; /* Ensure the images are displayed as blocks */
   margin: 0 auto; /* Automatically center the images horizontally */
   background-color: wheat;
-  width: 130px;
-  height: 130px;
+  width: 120px;
+  height: 120px;
 }
 
 .nav-container ul li:last-child {
@@ -120,6 +120,7 @@ img {
 }
 
 /* Main element */
+
 main {
   left: 20%; /* Position main content 20% from the left */
   top: 30px; /* Position main content 100px from the top */
@@ -128,4 +129,72 @@ main {
   padding: 20px; /* Add padding to provide space around the content */
   color: wheat; /* Set text color to wheat */
   border: 1px solid wheat; /* Add border */
+
+  /* Center align contents horizontally and vertically */
+  display: flex;
+  justify-content: center; /* Center contents horizontally */
+  align-items: center; /* Center contents vertically */
+  padding-left: 75px;
+  padding-right: 75px;
+
+  background-color: rgba(0, 0, 0, 0.5); /* Set background color with 50% opacity */
+}
+
+.main-content {
+  text-align: center; /* Center-align the content */
+  padding: 20px 0; /* Add padding to the top and bottom */
+}
+
+main p {
+  text-align: center; /* Center-align the paragraph text */
+  padding-top: 20px; /* Add padding to the top of the paragraph */
+  font-style: italic; /* Italicize the font */
+}
+
+/* Buttons */
+
+.design-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Add some margin to separate buttons from the paragraph */
+}
+
+.design-buttons button {
+  padding: 10px 40px; /* Add padding to the buttons */
+  margin: 10px 30px; /* Add margin between buttons */
+  font-size: 22px; /* Adjust font size as needed */
+  background-color: black; /* Set background color of the buttons */
+  color: wheat; /* Set text color of the buttons */
+  font-weight: 700; /* Set font weight to 700 */
+  border: 2px solid wheat; /* Set border with solid color wheat */
+  border-radius: 10px; /* Add border-radius for curved corners */
+  cursor: pointer; /* Add cursor pointer on hover */
+  transition: color 0.1s ease, border-color 0.1s ease; /* Add transition for color and border-color */
+}
+
+.design-buttons button:hover {
+  color: rgb(237, 237, 237); /* Darker shade of wheat */
+  border-color: #b3b3b3; /* Darker shade of wheat */
+}
+
+.design-buttons button.active {   /* Buttons on clicked boolean true or false */
+  background-color: wheat; /* Background color when button is active */
+  border-color: rgb(171, 171, 171); /* Border color when button is active */
+  color: black; /* Font color when button is active */
+}
+
+/* Footer */
+
+footer {
+  width: 100%; /* Take up the full width of the viewport */
+  padding: 20px; /* Add padding to the footer */
+  margin-top: 60px; /* Add some margin at the top to separate it from the main content */
+  color: wheat; /* Set text color */
+  font-size: 23px; /* Set font size */
+  text-align: center; /* Center-align the text */
+  font-weight: 400;
+}
+
+footer span {
+  font-weight: 900;
 }
