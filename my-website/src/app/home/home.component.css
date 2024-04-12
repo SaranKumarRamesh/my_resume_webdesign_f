@@ -1,23 +1,184 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+html {
+  width: 100%;
+  height: 105vh;
+  background-color: black;
+}
+
+.home-container {
+  height: 100vh; /* Adjust height as needed */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
+}
+
+.intro-pg1 {
   margin: 0;
-  padding-top: 0;
-  font-family: Arial, sans-serif;
-  background-color: wheat;
 }
 
-.page-layout, main {
-  background-color: #31363F;
-}
-
-.first-page {
-  background-color: #31363F;
-  color: #fff;
+header {
+  position: relative; /* Make the header relative to control absolutely positioned elements */
+  width: 100%;
+  z-index: 1;
 }
 
 .iframe-container {
+  position: absolute; /* Make the iframe fixed to ensure it covers the entire viewport */
   width: 100%;
   height: 100%;
-  z-index: 1;
-  border: 0;
-  bottom: 0;
+  border: none;
+  top: 0;
+  left: 0;
+}
+
+.content {
+  position: relative; /* Make the content relative to position it on top of the iframe */
+  padding: 20px;
+}
+
+body {
+    /* Code for font import */
+    font-family: cursive;
+    font-optical-sizing: auto;
+}
+
+/* Design for the code */
+
+h1 {
+  color: wheat;
+  font-weight: 900;
+  font-style: normal;
+
+  font-size: 66px;
+  text-align: center;
+  padding-top: 130px;
+  padding-bottom: 60px;
+  margin: 0;
+}
+
+/* Navigation design */
+
+nav ul {
+  list-style-type: none; /* Remove bullet points */
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline; /* Display list items horizontally */
+}
+
+nav ul li:not(:last-child) a::after {
+  content: "|"; /* Add a separator after each list item except the last one */
+  margin-left: 50px;
+  margin-right: 50px;
+  color: white;
+}
+
+nav ul li a {
+  color: wheat; /* Set default text color */
+  text-decoration: none; /* Remove underline from links */
+  transition: color 0.2s; /* Smooth transition for color change */
+}
+
+nav ul li a:hover {
+  color: #75BFD1; /* Change text color on hover */
+}
+
+nav ul li a:active {
+  color: gray; /* Change text color on click */
+}
+
+nav ul li a.active {
+  color: rgb(148, 73, 176); /* Set color for active link */
+}
+
+/* Content design */
+
+.intro-content {
+  /* color: #92c8cc; #92c8cc*/
+  text-align: center;
+  font-size: 50px;
+  color: black;
+  font-weight: 900;
+  font-style: normal;
+  text-shadow: -2px 0 #D3D798, 0 2px #D3D798, 2px 0 #D3D798, 0 -2px #D3D798;
+  margin: 210px;
+
+  backdrop-filter: blur(1px); /* Adjust the blur radius as needed */
+  background-color: rgba(61, 59, 59, 0.5); /* Adjust the background color and opacity as needed */
+}
+
+/* button design */
+
+.buttons {
+  text-align: center; /* Center align the buttons */
+}
+
+/* Resume button */
+
+.resume-button {
+  padding: 30px 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: wheat;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin: 50px;
+  margin-top: 100px;
+}
+
+.resume-link {
+  text-decoration: none; /* Remove underline */
+  color: black;
+  font-weight: 600;
+}
+
+.resume-button:hover {
+  background-color: #d2b48c; /* Darker shade of wheat */
+}
+
+.resume-button:active {
+  background-color: #383838; /* Dark grey / black */
+  border: 3px solid wheat;
+}
+
+.resume-link:active {
+  color: wheat; /* wheat */
+}
+
+/* Contact-me button */
+.contact-me-button {
+  padding: 30px 40px;
+  border: none;
+  border-radius: 5px;
+  background-color: wheat;
+  font-size: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin: 50px;
+  margin-top: 100px;
+}
+
+.contact-me-link {
+  text-decoration: none; /* Remove underline */
+  color: black;
+  font-weight: 600;
+}
+
+.contact-me-button:hover {
+  background-color: #d2b48c; /* Darker shade of wheat */
+}
+
+.contact-me-button:active {
+  background-color: #383838; /* Dark grey */
+  border: 3px solid wheat;
+}
+
+.contact-me-link:active {
+  color: wheat; /* Darker shade of wheat */
 }

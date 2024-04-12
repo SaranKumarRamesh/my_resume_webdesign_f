@@ -3,17 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>My website Home</title>
 </head>
-<body>
-  <main>
-    <section class="page-layout">
-      <iframe class="iframe-container" src="http://localhost:3000/aurora.html"></iframe>
-    </section>
-  </main>
+<body class="home-container">
+  <header>
+    <h1 class="intro-pg1">Hi, I am Saran</h1>
+    <nav>
+        <ul>
+            <li><a routerLink="/">Home</a></li>
+            <li><a routerLink="/about">About</a></li>
+            <li><a routerLink="/projects">Projects/Skills</a></li>
+            <li><a routerLink="/experience">Experience/Education</a></li>
+            <li><a routerLink="/contact">Contact Me</a></li>
+        </ul>
+    </nav>
+  </header>
+  <section class="page-layout">
+    <iframe class="iframe-container" src="http://localhost:3000/aurora.html"></iframe>
+  </section>
 
-  <footer>
+  <section class="content">
+    <p class="intro-content">"A software developer who loves to find new problems and solve them."</p>
+    <div class="buttons">
+        <button class="resume-button"><a href="#contact" class="resume-link">My Profile (Resume)</a></button>
+        <button class="contact-me-button"><a href="#contact" class="contact-me-link">Contact Me</a></button>
+    </div>
+  </section>
 
-  </footer>
+  <footer></footer>
 </body>
 </html>
