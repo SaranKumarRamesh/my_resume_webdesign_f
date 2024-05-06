@@ -4,7 +4,7 @@ html {
   background-color: black;
 }
 
-.projects-container {
+.expedu-container {
   height: 100vh; /* Adjust height as needed */
   overflow-y: scroll; /* Enable vertical scrolling */
   scroll-snap-type: y mandatory; /* Enable vertical scroll snapping */
