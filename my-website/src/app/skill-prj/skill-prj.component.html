@@ -5,15 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-  <main>
-    <section class="page-layout">
-      <iframe class="iframe-container" src="http://localhost:3000/swirl.html"></iframe>
-    </section>
-  </main>
+<body class="projects-container">
 
-  <footer>
+  <!-- Header -->
+  <header>
+    <h1 class="name">Saran Kumar Ramesh</h1>
+    <span></span> <!-- Separator -->
+    <p class="quote">"If it works don't touch it', doesn't mean don't test it ...."</p>
+  </header>
 
-  </footer>
+  <!-- Navigation -->
+  <nav class="nav-container">
+    <ul>
+      <li><a routerLink="/"><img src="../../assets/11.png" alt="Home"></a> <a routerLink="/">Home</a></li>
+      <li><a routerLink="/about"><img src="../../assets/4.png" alt="About"></a> <a routerLink="/about">About</a></li>
+      <li><a routerLink="/projects"><img src="../../assets/5.png" alt="Projects/Skills"></a> <a routerLink="/projects">Projects/Skills</a></li>
+      <li><a routerLink="/experience"><img src="../../assets/9.png" alt="Experience/Education"></a> <a routerLink="/experience">Experience/Education</a></li>
+      <li><a routerLink="/contact"><img src="../../assets/14.png" alt="Contact Me"></a> <a routerLink="/contact">Contact Me</a></li>
+    </ul>
+  </nav>
+
+<!-- Main Content -->
+<main>
+  <!-- Content Section -->
+  <section class="skills-section">
+    <h2>SKILLS</h2>
+    <ul>
+      <li><span>Frontend </span>- CSS, HTML, JS, TS, Angular 7, React 17 </li>
+        <span class="skill-bar">90%</span>
+      <li><span>Backend </span>- Java, Spring, Node, Hibernate, Apache Tomcat </li>
+        <span class="skill-bar">87%</span>
+      <li><span>Database </span>- MySQL, SQL Server, Mongo DB </li>
+        <span class="skill-bar">95%</span>
+      <li><span>Devops </span>- Ansible, Maven/Gradle, Docker, Kubernetes(OKD) </li>
+        <span class="skill-bar">80%</span>
+    </ul>
+  </section>
+
+  <span class="skill-seperator"></span> <!-- Separator -->
+
+  <section class="projects-section">
+    <h2>PROJECTS</h2>
+    <ul>
+      <li><span>Marriott ( Full-Stack Developer )</span> - I was involved in both Java backend development and HTML/CSS frontend tasks. My responsibilities included implementing frontend designs, developing backend functionalities, and handling database operations. It was a dynamic environment that allowed me to hone my skills in both frontend and backend technologies.</li>
+      <li><span>Allegiant air ( DevOps Engineer )</span> - I focused on automation of specific functionalities to streamline processes. My tasks included environment creation, migration, implementing gitleaks for enhanced security, and managing Jenkins CI/CD pipelines. It was an exciting opportunity to work on infrastructure automation and continuous integration/continuous deployment (CI/CD) processes.</li>
+    </ul>
+  </section>
+
+</main>
+
+
+<section class="page-layout">
+  <iframe class="iframe-container" src="http://localhost:3000/swirl.html"></iframe>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>Discover more about my journey. <span>Scroll down</span> to Navigate to my experience and education...</p>
+</footer>
 </body>
 </html>
