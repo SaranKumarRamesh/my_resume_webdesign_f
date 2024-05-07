@@ -1,19 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body class="contactme-container">
+    <!-- Header -->
+    <header>
+      <h1 class="name">Saran Kumar Ramesh</h1>
+      <span></span>
+      <!-- Separator -->
+      <p class="quote">
+        "Why do programmers prefer dark mode? Because light attracts bugs..."
+      </p>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+      <ul>
+        <li>
+          <a routerLink="/"><img src="../../assets/11.png" alt="Home" /></a>
+          <a routerLink="/">Home</a>
+        </li>
+        <li>
+          <a routerLink="/about"
+            ><img src="../../assets/4.png" alt="About"
+          /></a>
+          <a routerLink="/about">About</a>
+        </li>
+        <li>
+          <a routerLink="/projects"
+            ><img src="../../assets/5.png" alt="Projects/Skills"
+          /></a>
+          <a routerLink="/projects">Projects/Skills</a>
+        </li>
+        <li>
+          <a routerLink="/experience"
+            ><img src="../../assets/9.png" alt="Experience/Education"
+          /></a>
+          <a routerLink="/experience">Experience/Education</a>
+        </li>
+        <li>
+          <a routerLink="/contact"
+            ><img src="../../assets/14.png" alt="Contact Me"
+          /></a>
+          <a routerLink="/contact">Contact Me</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <h2>CONTACT ME</h2>
+      <div class="content-wrapper">
+
+        <!-- Information contact section -->
+        <div class="left-section">
+            <p>Why settle for stale code when you can have a fresh perspective? Call me up and let's create some magic.</p>
+            <ul>
+              <li><a href="/"><img src="../../assets/c22.png" alt="linkedin">Linked in</a></li>
+              <li><a href="/"><img src="../../assets/c3.png" alt="github">GitHub</a></li>
+              <li><a href="/"><img src="../../assets/c4.png" alt="myWebsite">My digital lair</a></li>
+              <li><a href="/"><img src="../../assets/c55.png" alt="email">saranr23101999&#64;gmail.com</a></li>
+              <li><a href="/"><img src="../../assets/c66.png" alt="mobileNo">+1 (306) 351-2583</a></li>
+              <li><img src="../../assets/c77.png" alt="address">1020 Matheson Drive, Saskatoon SK, S7L5T7</li>
+            </ul>
+        </div>
+
+        <!-- Seperator -->
+        <span class="seperator"></span>
+
+        <!-- Contact me boxes -->
+        <div class="right-section">
+            <div>Let me Contact you...</div>
+            <form>
+              <input type="text" id="name" name="name" placeholder="Your name"><br>
+              <input type="email" id="email" name="email" placeholder="Your email"><br>
+              <textarea id="requirements" name="requirements" rows="4" cols="50" placeholder="Your requirements here..."></textarea><br>
+              <input type="submit" value="Let's Connect">
+            </form>
+        </div>
+      </div>
+      <button type="button">My Profile (Resume)</button>
+
+    </main>
+
     <section class="page-layout">
-      <iframe class="iframe-container" src="http://localhost:3000/index.html"></iframe>
+      <iframe
+        class="iframe-container"
+        src="http://localhost:3000/index.html"
+      ></iframe>
     </section>
-  </main>
 
-  <footer>
-
-  </footer>
-</body>
+    <!-- Footer -->
+    <footer>
+      <p>
+        Got questions? <span>Reach out</span> and let's have a conversation...
+      </p>
+    </footer>
+  </body>
 </html>
+
+<!-- Why do programmers prefer dark mode? Because light attracts bugs. -->
+<!-- Why settle for stale code when you can have a fresh perspective? Call me up and let's create some magic. -->
+<!-- Got questions? Reach out and let's have a conversation. -->
