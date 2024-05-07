@@ -24,31 +24,14 @@ export class HomeComponent implements OnInit {
     });
   }
 
-
-  // the below on scroll function is working only if the screen is in inspect mode else itis not working
-
-  @HostListener('window:scroll', ['$event'])
-  onScroll(event: any) {
-    // Get the height of the document, including any overflow content
-    const documentHeight = document.documentElement.scrollHeight;
-
-    // Get the height of the viewport
-    const viewportHeight = window.innerHeight;
-
-    // Get the current scroll position
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    console.log(scrollPosition);
-
-    // Calculate the position at the end of the Home component
-    const endOfHomePosition = documentHeight - viewportHeight;
-
-    // Define a threshold (e.g., 90% of the Home component height)
-    const threshold = 0.90 * endOfHomePosition;
-
-    console.log(scrollPosition + " " + threshold);
-
-    if (scrollPosition >= threshold) {
+  @HostListener('window:wheel', ['$event'])
+  onWheel(event: WheelEvent) {
+    if (event.deltaY > 0) {
+      // Navigate to the next page (about page) and set the transition flag
+      console.log("True");
+      setTimeout(() => {
       this.router.navigateByUrl('/about');
+      }, 500); // Adjust the delay as needed
     }
   }
 }
