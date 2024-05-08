@@ -8,6 +8,8 @@ import { AboutComponent } from './about/about.component';
 import { SkillPrjComponent } from './skill-prj/skill-prj.component';
 import { ExpEduComponent } from './exp-edu/exp-edu.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
     AboutComponent,
     SkillPrjComponent,
     ExpEduComponent,
-    ContactMeComponent
+    ContactMeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

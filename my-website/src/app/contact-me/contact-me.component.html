@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contact me</title>
   </head>
   <body class="contactme-container">
     <!-- Header -->
@@ -36,12 +36,12 @@
         <div class="left-section">
             <p>Why settle for stale code when you can have a fresh perspective? Call me up and let's create some magic.</p>
             <ul>
-              <li><a href="https://www.linkedin.com/in/sarankumarramesh"><img src="../../assets/contme-linkedin.png" alt="linkedin">Linked in</a></li>
-              <li><a href="https://github.com/SaranKumarRamesh"><img src="../../assets/contme-github.png" alt="github">GitHub</a></li>
-              <li><a href="/"><img src="../../assets/contme-mylogo.png" alt="myWebsite">My digital lair</a></li>
-              <li><a href="mailto:saranr23101999@gmail.com"><img src="../../assets/contme-email.png" alt="email">saranr23101999&#64;gmail.com</a></li>
-              <li><a href="tel:+1-306-351-2583"><img src="../../assets/contme-mobno.png" alt="mobileNo">+1 (306) 351-2583</a></li>
-              <li><a href="https://www.google.com/maps/search/1020+Matheson+Drive,+Saskatoon,+SK+S7L5T7"><img src="../../assets/contme-address.png" alt="address">1020 Matheson Drive, Saskatoon SK, S7L5T7</a></li>
+              <li><a href="https://www.linkedin.com/in/sarankumarramesh" target="_blank"><img src="../../assets/contme-linkedin.png" alt="linkedin">Linked in</a></li>
+              <li><a href="https://github.com/SaranKumarRamesh" target="_blank"><img src="../../assets/contme-github.png" alt="github">GitHub</a></li>
+              <li><a href="/" target="_blank"><img src="../../assets/contme-mylogo.png" alt="myWebsite">My digital lair</a></li>
+              <li><a href="mailto:saranr23101999@gmail.com" target="_blank"><img src="../../assets/contme-email.png" alt="email">saranr23101999&#64;gmail.com</a></li>
+              <li><a href="tel:+1-306-351-2583" target="_blank"><img src="../../assets/contme-mobno.png" alt="mobileNo">+1 (306) 351-2583</a></li>
+              <li><a href="https://www.google.com/maps/search/1020+Matheson+Drive,+Saskatoon,+SK+S7L5T7" target="_blank"><img src="../../assets/contme-address.png" alt="address">1020 Matheson Drive, Saskatoon SK, S7L5T7</a></li>
             </ul>
         </div>
 
@@ -51,16 +51,43 @@
         <!-- Contact me boxes -->
         <div class="right-section">
             <div>Let me Contact you...</div>
-            <form>
-              <input type="text" id="name" name="name" placeholder="Your name"><br>
-              <input type="email" id="email" name="email" placeholder="Your email"><br>
-              <textarea id="requirements" name="requirements" rows="4" cols="50" placeholder="Your requirements here..."></textarea><br>
-              <input type="submit" value="Let's Connect">
+            <div *ngIf="emailSent">
+              <p>The email has been sent. I will reach back to you as soon as possible.</p>
+            </div>
+            <form #contactForm="ngForm" (ngSubmit)="submitForm(contactForm)">
+              <input type="text" id="name" name="name" placeholder="Your name"
+                     [(ngModel)]="formData.name" required
+                     minlength="3" maxlength="50" pattern="[a-zA-Z\s]+"><br>
+              <!-- Display error message for name -->
+              <div *ngIf="contactForm.controls['name'].errors && (contactForm.controls['name'].dirty || contactForm.controls['name'].touched)" class="validate">
+                <div *ngIf="contactForm.controls['name'].errors['required']">**Name is required.</div>
+                <div *ngIf="contactForm.controls['name'].errors['minlength']">**Name must be at least 3 characters long.</div>
+                <div *ngIf="contactForm.controls['name'].errors['maxlength']">**Name cannot exceed 50 characters.</div>
+                <div *ngIf="contactForm.controls['name'].errors['pattern']">**Name can only contain letters and spaces.</div>
+              </div>
+
+              <input type="email" id="email" name="email" placeholder="Your email"
+                   [(ngModel)]="formData.email" required
+                   pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"><br>
+                <!-- Display error message for email -->
+                <div *ngIf="contactForm.controls['email'].errors && (contactForm.controls['email'].dirty || contactForm.controls['email'].touched)" class="validate">
+                  <div *ngIf="contactForm.controls['email'].errors['required']">**Email is required.</div>
+                  <div *ngIf="contactForm.controls['email'].errors['pattern']">**Invalid email format.</div>
+                </div>
+
+                <textarea id="requirements" name="requirements" rows="4" cols="50" placeholder="Your requirements here..."
+                [(ngModel)]="formData.requirements"></textarea><br>
+
+                <div *ngIf="emailSent" class="confirmation-email">
+                  <p>The email has been sent. I will reach back to you as soon as possible.</p>
+                </div>
+
+              <input type="submit" value="Let's Connect" [disabled]="!contactForm.valid || emailSent" [class.disabled-button]="!contactForm.valid || emailSent">
+
             </form>
         </div>
       </div>
-      <button type="button">My Profile (Resume)</button>
-
+      <button class="resume-button"><a href="https://raw.githubusercontent.com/SaranKumarRamesh/resume/4021175291df651094c98e074c38c69a4d3148f4/Saran%20Kumar%20Ramesh%20-%20Resume.pdf" download="Saran Kumar Ramesh - Resume.pdf" class="resume-link">My Profile (Resume)</a></button>
     </main>
 
     <section class="page-layout">

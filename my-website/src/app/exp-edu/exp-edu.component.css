@@ -167,6 +167,7 @@ main {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 10px;
+  text-decoration: underline;
 }
 
 .exp-section div {
