@@ -58,20 +58,60 @@ export class AboutComponent {
     this.updateMainContent();
   }
 
+  navigating: boolean = false; // Flag to track navigation state
+
   constructor(private router: Router) { }
+
+  // Code for working on scroll for mouse only not on trackpad
+  // @HostListener('window:wheel', ['$event'])
+  // onWheel(event: WheelEvent) {
+  //   if (event.deltaY > 0) {
+  //     // Navigate to the next page (about page) and set the transition flag
+  //     setTimeout(() => {
+  //     this.router.navigateByUrl('/projects');
+  //     }, 500); // Adjust the delay as needed
+  //   } else if (event.deltaY < 0) {
+  //     // Navigate to the previous page (home page)
+  //     setTimeout(() => {
+  //       this.router.navigateByUrl('');
+  //     }, 500); // Adjust the delay as needed
+  //   }
+  // }
+
+  // Debounce function for scroll events
+  debounce(callback: Function, delay: number) {
+    let timeout: any;
+    return function(this: any, ...args: any[]) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        callback.apply(this, args);
+      }, delay);
+    };
+  }
+
+  // Debounce the onWheel function
+  debouncedOnWheel = this.debounce((event: WheelEvent) => {
+    if (!this.navigating) {
+      if (event.deltaY > 0) {
+        // Navigate to the next page (about page) after debounce and set the transition flag
+        this.navigating = true;
+        this.router.navigateByUrl('/projects');
+      } else if (event.deltaY < 0) {
+        // Navigate to the previous page (home page) after debounce and set the transition flag
+        this.navigating = true;
+        this.router.navigateByUrl('');
+      }
+
+      // Reset navigation flag after a delay
+      setTimeout(() => {
+        this.navigating = false;
+      }, 300); // Adjust the delay as needed
+    }
+
+  }, 300); // Adjust the delay as needed
 
   @HostListener('window:wheel', ['$event'])
   onWheel(event: WheelEvent) {
-    if (event.deltaY > 0) {
-      // Navigate to the next page (about page) and set the transition flag
-      setTimeout(() => {
-      this.router.navigateByUrl('/projects');
-      }, 500); // Adjust the delay as needed
-    } else if (event.deltaY < 0) {
-      // Navigate to the previous page (home page)
-      setTimeout(() => {
-        this.router.navigateByUrl('');
-      }, 500); // Adjust the delay as needed
-    }
+    this.debouncedOnWheel(event);
   }
 }
