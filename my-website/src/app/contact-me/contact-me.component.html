@@ -51,9 +51,6 @@
         <!-- Contact me boxes -->
         <div class="right-section">
             <div>Let me Contact you...</div>
-            <div *ngIf="emailSent">
-              <p>The email has been sent. I will reach back to you as soon as possible.</p>
-            </div>
             <form #contactForm="ngForm" (ngSubmit)="submitForm(contactForm)">
               <input type="text" id="name" name="name" placeholder="Your name"
                      [(ngModel)]="formData.name" required

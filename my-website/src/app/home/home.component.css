@@ -1,5 +1,5 @@
 html {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: black;
 }
@@ -16,14 +16,15 @@ html {
 
 header {
   position: relative; /* Make the header relative to control absolutely positioned elements */
-  width: 100%;
+  width: 100vw;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the background color and opacity as needed */
 }
 
 .iframe-container {
   position: absolute; /* Make the iframe fixed to ensure it covers the entire viewport */
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   border: none;
   top: 0;
   left: 0;
@@ -31,7 +32,8 @@ header {
 
 .content {
   position: relative; /* Make the content relative to position it on top of the iframe */
-  padding: 20px;
+  padding-top: 5vw;
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust the background color and opacity as needed */
 }
 
 /* Design for the code */
@@ -41,10 +43,11 @@ h1 {
   font-weight: 800;
   font-style: normal;
 
-  font-size: 70px;
+  font-size: 3vw;
   text-align: center;
-  padding-top: 130px;
-  padding-bottom: 60px;
+  padding-top: 6vw;
+  padding-bottom: 3vw;
+
   margin: 0;
 }
 
@@ -52,11 +55,12 @@ h1 {
 
 nav ul {
   list-style-type: none; /* Remove bullet points */
-  font-size: 25px;
+  font-size: 1vw;
   font-weight: 700;
   text-align: center;
   padding: 0;
   margin: 0;
+  text-shadow: -0.15vw 0 black, 0 0.05vw black, 0.05vw 0 black, 0 -0.05vw black;
 }
 
 nav ul li {
@@ -65,8 +69,8 @@ nav ul li {
 
 nav ul li:not(:last-child) a::after {
   content: "|"; /* Add a separator after each list item except the last one */
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 5vw;
+  margin-right: 5vw;
   color: white;
 }
 
@@ -93,15 +97,15 @@ nav ul li a.active {
 .intro-content {
   /* color: #92c8cc; #92c8cc*/
   text-align: center;
-  font-size: 50px;
-  color: black;
-  font-weight: 900;
+  font-size: 2vw;
+  color: wheat;
+  font-weight: 800;
   font-style: normal;
-  text-shadow: -2px 0 #D3D798, 0 2px #D3D798, 2px 0 #D3D798, 0 -2px #D3D798;
-  margin: 210px;
+  margin: 0 6vw;
+  margin-top: 6vw;
+  margin-bottom: 4vw;
 
   backdrop-filter: blur(1px); /* Adjust the blur radius as needed */
-  background-color: rgba(61, 59, 59, 0.5); /* Adjust the background color and opacity as needed */
 }
 
 /* button design */
@@ -110,71 +114,54 @@ nav ul li a.active {
   text-align: center; /* Center align the buttons */
 }
 
-/* Resume button */
+/* Resume button & Contact-me button*/
 
-.resume-button {
-  margin: 50px;
-  margin-top: 100px;
-  padding: 30px 40px; /* Add padding to the buttons */
+.resume-button, .contact-me-button {
+  margin: 0 5vw;
+  margin-top: 5vw;
+  padding: 1.5vw; /* Add padding to the buttons */
   background-color: black; /* Set background color of the buttons */
-  border: 2px solid wheat; /* Set border with solid color wheat */
-  border-radius: 10px; /* Add border-radius for curved corners */
+  border: 0.15vw solid wheat; /* Set border with solid color wheat */
+  border-radius: 0.7vw; /* Add border-radius for curved corners */
   cursor: pointer; /* Add cursor pointer on hover */
   transition: color 0.1s ease, border-color 0.1s ease; /* Add transition for color and border-color */
 }
 
-.resume-link {
-  font-size: 25px; /* Adjust font size as needed */
+.resume-link, .contact-me-link {
+  font-size: 1vw; /* Adjust font size as needed */
   text-decoration: none; /* Remove underline */
-  font-weight: 700; /* Set font weight to 700 */
+  font-weight: 600; /* Set font weight to 700 */
   color: wheat;
-  font-weight: 600;
 }
 
-.resume-button:hover .resume-link {
+.resume-button:hover .resume-link, .contact-me-button:hover .contact-me-link{
   color: rgb(237, 237, 237); /* Darker shade of wheat */
   border-color: #b3b3b3; /* Darker shade of wheat */
 }
 
-.resume-button:active {
+.resume-button:active, .contact-me-button:active {
   background-color: #383838; /* Dark grey / black */
-  border: 3px solid wheat;
+  border: 0.1vw solid wheat;
 }
 
-.resume-link:active {
+.resume-link:active, .contact-me-link:active {
   color: wheat; /* wheat */
 }
 
-/* Contact-me button */
-.contact-me-button {
-  margin: 50px;
-  margin-top: 100px;
-  padding: 30px 40px; /* Add padding to the buttons */
-  background-color: black; /* Set background color of the buttons */
-  border: 2px solid wheat; /* Set border with solid color wheat */
-  border-radius: 10px; /* Add border-radius for curved corners */
-  cursor: pointer; /* Add cursor pointer on hover */
-  transition: color 0.1s ease, border-color 0.1s ease; /* Add transition for color and border-color */
-}
 
-.contact-me-link {
-  font-size: 25px; /* Adjust font size as needed */
-  text-decoration: none; /* Remove underline */
-  font-weight: 700; /* Set font weight to 700 */
-  color: wheat;
-  font-weight: 600;
-}
+@media (max-width: 1440px) {
 
-.contact-me-button:hover .contact-me-link{
-  color: rgb(237, 237, 237); /* Darker shade of wheat */
-  border-color: #b3b3b3; /* Darker shade of wheat */
-}
+  nav ul {
+    font-size: 1.3vw;
+    padding-top: 3vw;
+  }
 
-.contact-me-button:active {
-  background-color: #383838; /* Dark grey */
-  border: 3px solid wheat;
-}
+  .resume-link, .contact-me-link {
+    font-size: 1.3vw; /* Adjust font size as needed */
+  }
 
-.contact-me-link:active {
-  color: wheat; /* Darker shade of wheat */
+
+  h1 {
+    padding-bottom: 1vw;
+  }
 }

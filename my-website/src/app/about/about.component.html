@@ -31,13 +31,14 @@
     <section>
       <h2 class="main-content">{{ mainContent }}</h2>
 
-      <p>Click one or more of the below technologies to mix and match my skills,</p>
-
       <div class="design-buttons">
         <button [class.active]="frontendClicked" (click)="toggleFrontend()">Frontend</button>
         <button [class.active]="backendClicked" (click)="toggleBackend()">Backend</button>
         <button [class.active]="devopsClicked" (click)="toggleDevops()">DevOps</button>
       </div>
+
+      <p>Click one or more of the above technologies to mix and match my skills</p>
+
     </section>
   </main>
 
