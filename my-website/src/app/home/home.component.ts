@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
+  navigating: boolean = false; // Flag to track navigation state
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -24,31 +26,35 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  // Debounce function for scroll events
+  debounce(callback: Function, delay: number) {
+    let timeout: any;
+    return function(this: any, ...args: any[]) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        callback.apply(this, args);
+      }, delay);
+    };
+  }
 
-  // the below on scroll function is working only if the screen is in inspect mode else itis not working
+  // Debounce the onWheel function
+  debouncedOnWheel = this.debounce((event: WheelEvent) => {
+    if (!this.navigating && event.deltaY > 0) {
+      // Prevent multiple navigations
+      this.navigating = true;
 
-  @HostListener('window:scroll', ['$event'])
-  onScroll(event: any) {
-    // Get the height of the document, including any overflow content
-    const documentHeight = document.documentElement.scrollHeight;
-
-    // Get the height of the viewport
-    const viewportHeight = window.innerHeight;
-
-    // Get the current scroll position
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    console.log(scrollPosition);
-
-    // Calculate the position at the end of the Home component
-    const endOfHomePosition = documentHeight - viewportHeight;
-
-    // Define a threshold (e.g., 90% of the Home component height)
-    const threshold = 0.90 * endOfHomePosition;
-
-    console.log(scrollPosition + " " + threshold);
-
-    if (scrollPosition >= threshold) {
+      // Navigate to the next page (about page) after debounce and set the transition flag
       this.router.navigateByUrl('/about');
+
+      // Reset navigation flag after a delay
+      setTimeout(() => {
+        this.navigating = false;
+      }, 300);
     }
+  }, 300);
+
+  @HostListener('window:wheel', ['$event'])
+  onWheel(event: WheelEvent) {
+    this.debouncedOnWheel(event);
   }
 }

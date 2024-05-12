@@ -1,5 +1,5 @@
 html {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: rgb(6, 6, 6);
 }
@@ -18,14 +18,14 @@ html {
 
 header {
   position: relative; /* Make the header relative to control absolutely positioned elements */
-  width: 100%;
+  width: 100vw;
   z-index: 1;
 }
 
 .iframe-container {
   position: absolute; /* Make the iframe fixed to ensure it covers the entire viewport */
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   border: none;
   top: 0;
   left: 0;
@@ -51,29 +51,29 @@ h1, p {
 /* Header */
 
 header {
-  padding: 20px; /* Add padding to provide some space around the content */
+  padding: 0.5vw; /* Add padding to provide some space around the content */
   color: wheat; /* Set text color to wheat */
-  margin-top: 30px;
+  margin-top: 1vw;
   text-align: center;
 }
 
 .name {
   display: inline;
-  font-size: 35px; /* Adjust font size as needed */
+  font-size: 1.4vw; /* Adjust font size as needed */
 }
 
 header span {
   display: inline-block; /* Make the span an inline-block element */
-  width: 2px; /* Set the width of the separator */
-  height: 30px; /* Set the height of the separator */
+  width: 0.1vw; /* Set the width of the separator */
+  height: 1.2vw; /* Set the height of the separator */
   background-color: wheat; /* Set the color of the separator */
-  margin: 0 90px; /* Add margin to the sides of the separator */
+  margin: 0 2vw; /* Add margin to the sides of the separator */
 }
 
 .quote {
   display: inline;
   font-style: italic;
-  font-size: 25px;
+  font-size: 1.05vw;
   text-align: center;
 }
 
@@ -81,10 +81,10 @@ header span {
 
 .nav-container {
   position: fixed; /* Fix the navigation bar to the viewport */
-  top: 100px; /* Adjust the distance from the top based on your header height */
+  top: 3.3vw; /* Adjust the distance from the top based on your header height */
   left: 0; /* Align the navigation bar to the left */
   width: 20%; /* Set the width of the navigation bar */
-  padding: 20px; /* Add padding to the navigation bar */
+  padding: 2vw; /* Add padding to the navigation bar */
   opacity: 80%;
 }
 
@@ -101,18 +101,18 @@ header span {
 }
 
 .nav-container ul li {
-  padding: 20px 50px;
+  padding: 0.8vw 3vw;
   text-align: center;
-  font-size: 25px;
-  border-bottom: 1px solid wheat; /* Add a solid wheat-colored border bottom */
+  font-size: 1vw;
+  border-bottom: 0.1vw solid wheat; /* Add a solid wheat-colored border bottom */
 }
 
 .nav-container img {
   display: block; /* Ensure the images are displayed as blocks */
   margin: 0 auto; /* Automatically center the images horizontally */
   background-color: wheat;
-  width: 120px;
-  height: 120px;
+  width: 4.8vw;
+  height: 4.8vw;
 }
 
 .nav-container ul li:last-child {
@@ -123,12 +123,12 @@ header span {
 
 main {
   left: 20%; /* Position main content 20% from the left */
-  top: 30px; /* Position main content 100px from the top */
+  top: 1.3vw; /* Position main content 100px from the top */
   width: 80%; /* Occupy 80% of the width */
-  height: 1000px;
-  padding: 20px; /* Add padding to provide space around the content */
+  height: 40vw;
+  padding: 1vw; /* Add padding to provide space around the content */
   color: wheat; /* Set text color to wheat */
-  border: 1px solid wheat; /* Add border */
+  border: 0.07vw solid wheat; /* Add border */
   background-color: rgba(0, 0, 0, 0.5); /* Set background color with 50% opacity */
   display: flex;
   flex-direction: column; /* Stack flex items vertically */
@@ -136,42 +136,50 @@ main {
 }
 
 main h2 {
-  padding-bottom: 60px; /* Add padding to the top and bottom */
-  padding-top: 40px;
-  font-size: 50px; /* Change font size */
+  padding-bottom: 2vw; /* Add padding to the top and bottom */
+  padding-top: 1.5vw;
+  font-size: 1.8vw; /* Change font size */
   text-align: center; /* Center align the text */
-  margin-right: 325px;
+  margin-right: 14vw;
 }
 
-main button {
-  padding: 12px 50px; /* Add padding to the buttons */
-  font-size: 22px; /* Adjust font size as needed */
+.resume-button {
+  padding: 0.5vw 2vw; /* Add padding to the buttons */
   background-color: black; /* Set background color of the buttons */
   color: wheat; /* Set text color of the buttons */
   font-weight: 700; /* Set font weight to 700 */
-  border: 2px solid wheat; /* Set border with solid color wheat */
-  border-radius: 10px; /* Add border-radius for curved corners */
+  border: 0.13vw solid wheat; /* Set border with solid color wheat */
+  border-radius: 0.5vw; /* Add border-radius for curved corners */
   cursor: pointer; /* Add cursor pointer on hover */
   transition: color 0.2s ease, border-color 0.1s ease; /* Add transition for color and border-color */
-  margin-right: 325px;
+  margin-right: 14vw;
 }
 
-main button:hover {
+.resume-link {
+  font-size: 1.1vw; /* Adjust font size as needed */
+  text-decoration: none; /* Remove underline */
+  font-weight: 700; /* Set font weight to 700 */
+  color: wheat;
+  font-weight: 600;
+}
+
+.resume-button:hover .resume-link {
   color: rgb(237, 237, 237); /* Darker shade of wheat */
   border-color: #b3b3b3; /* Darker shade of wheat */
 }
 
-main button:active {
-  color: black;
-  background-color: rgb(161, 161, 161); /* Dark grey */
-  border: 3px solid wheat;
+.resume-button:active {
+  background-color: #383838; /* Dark grey / black */
+  border: 0.13vw solid wheat;
 }
 
+
   /* Seperator with div */
+
 .content-wrapper {
   display: flex; /* Use flexbox for the left and right sections */
   width: 100%; /* Occupy the full width of the container */
-  height: 735px;
+  height: 28.6vw;
 }
 
 .right-section {
@@ -186,14 +194,14 @@ main button:active {
   /* Left section Styles */
 
 .left-section {
-  margin: 0px 10px;
+  margin: 0 1vw;
 }
 
 .left-section p {
-  font-size: 24px;
+  font-size: 1vw;
   font-weight: 500;
   text-align: left;
-  padding-bottom: 20px;
+  padding-bottom: 0.7vw;
 }
 
 .left-section ul {
@@ -203,107 +211,134 @@ main button:active {
 }
 
 .left-section li {
-  margin-left: 50px;
-  padding: 13px 0px;
+  margin-left: 2vw;
+  padding: 0.7vw 0px;
   display: flex;
   align-items: center;
 }
 
 .left-section img {
   display: inline; /* Ensure the images are displayed as blocks */
-  width: 100px;
-  height: 70px;
-  padding-right: 30px;
+  width: 4vw;
+  height: 2.7vw;
+  padding-right: 1vw;
 }
 
 .left-section a, ul li:last-child {
   text-decoration: none;
   color: wheat;
-  font-size: 21px;
+  font-size: 0.95vw;
   font-weight: 600;
-  padding: 5px;
+  padding: 0.5px;
 }
 
   /* Right section Styles */
 
 .seperator {
   display: inline-block; /* Make the span an inline-block element */
-  width: 2px; /* Set the width of the separator */
-  height: 660px; /* Set the height of the separator */
+  width: 0.1vw; /* Set the width of the separator */
+  height: 25vw; /* Set the height of the separator */
   background-color: wheat; /* Set the color of the separator */
-  margin-top: 20px; /* Add margin to the sides of the separator */
-  margin-bottom: 40px;
+  margin-top: 1vw; /* Add margin to the sides of the separator */
+  margin-bottom: 2vw;
 }
 
 .right-section div:first-child {
-  font-size: 35px;
+  font-size: 1.43vw;
   font-weight: 500;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin-top: 1vw;
+  margin-bottom: 0.7vw;
   text-align: center;
 }
 
   /* Form design */
-  form {
-    text-align: center; /* Align form elements to the center */
-  }
 
-  form input[type="text"],
-  form input[type="email"],
-  form #requirements {
-    border: 1px solid wheat; /* Set border with solid color wheat */
-    font-size: 20px;
-    font-weight: 500;
-    padding: 10px;
-    width: 70%;
-    height: 80px;
-    text-align: center;
-    background-color: rgb(52, 52, 52);
-    margin: auto; /* Center the input fields */
-    border-radius: 10px;
-    margin-top: 30px;
-  }
+form {
+  text-align: center; /* Align form elements to the center */
+}
 
-  form #requirements {
-    height: 230px;
-  }
+form input[type="text"],
+form input[type="email"],
+form #requirements {
+  border: 0.05vw solid wheat; /* Set border with solid color wheat */
+  color: rgb(234, 234, 234);
+  font-size: 0.8vw;
+  font-weight: 500;
+  padding: 0.5vw;
+  width: 70%;
+  height: 3vw;
+  text-align: left;
+  background-color: rgb(52, 52, 52);
+  margin: auto; /* Center the input fields */
+  border-radius: 0.5vw;
+  margin-top: 1.3vw;
+}
 
-  form input[type="submit"] {
-    padding: 10px 40px; /* Add padding to the buttons */
-    margin: 60px 30px; /* Add margin between buttons */
-    font-size: 22px; /* Adjust font size as needed */
-    background-color: black; /* Set background color of the buttons */
-    color: wheat; /* Set text color of the buttons */
-    font-weight: 700; /* Set font weight to 700 */
-    border: 2px solid wheat; /* Set border with solid color wheat */
-    border-radius: 10px; /* Add border-radius for curved corners */
-    cursor: pointer; /* Add cursor pointer on hover */
-    transition: color 0.2s ease, border-color 0.1s ease; /* Add transition for color and border-color */
-  }
+form #requirements {
+  height: 8vw;
+}
 
-  form input[type="submit"]:hover {
-    color: rgb(237, 237, 237); /* Darker shade of wheat */
-    border-color: #b3b3b3; /* Darker shade of wheat */
-  }
+form input[type="submit"] {
+  padding: 0.5vw 2vw; /* Add padding to the buttons */
+  margin: 2vw 1.5vw; /* Add margin between buttons */
+  font-size: 1vw; /* Adjust font size as needed */
+  background-color: black; /* Set background color of the buttons */
+  color: wheat; /* Set text color of the buttons */
+  font-weight: 700; /* Set font weight to 700 */
+  border: 0.1vw solid wheat; /* Set border with solid color wheat */
+  border-radius: 0.5vw; /* Add border-radius for curved corners */
+  cursor: pointer; /* Add cursor pointer on hover */
+  transition: color 0.2s ease, border-color 0.1s ease; /* Add transition for color and border-color */
+}
 
-  form input[type="submit"]:active {
-    color: black;
-    background-color: rgb(161, 161, 161); /* Dark grey */
-    border: 3px solid wheat;
-  }
+form input[type="submit"]:hover {
+  color: rgb(237, 237, 237); /* Darker shade of wheat */
+  border-color: #b3b3b3; /* Darker shade of wheat */
+}
+
+form input[type="submit"]:active {
+  color: black;
+  background-color: rgb(161, 161, 161); /* Dark grey */
+  border: 3px solid wheat;
+}
 
 /* Footer */
 
 footer {
-  width: 100%; /* Take up the full width of the viewport */
-  padding: 20px; /* Add padding to the footer */
-  margin-top: 60px; /* Add some margin at the top to separate it from the main content */
+  width: 100vw; /* Take up the full width of the viewport */
+  padding: 0.6vw; /* Add padding to the footer */
+  margin-top: 2.33vw; /* Add some margin at the top to separate it from the main content */
   color: wheat; /* Set text color */
-  font-size: 23px; /* Set font size */
+  font-size: 0.95vw; /* Set font size */
   text-align: center; /* Center-align the text */
   font-weight: 400;
 }
 
 footer span {
   font-weight: 900;
+}
+
+/* Validation in form */
+
+.validate div {
+  color: red;
+  font-size: 0.6vw !important;
+  font-weight: 300;
+  text-align: left !important;
+  margin-left: 8vw;
+}
+
+/* Disable in Validation */
+
+.disabled-button {
+  opacity: 0.5; /* Reduce opacity to visually indicate disabled state */
+  cursor: not-allowed; /* Change cursor to not-allowed to indicate non-clickable */
+  pointer-events: none;
+}
+
+/* Email confirmation css */
+
+.confirmation-email {
+  padding-top: 1vw;
+  color: green;
 }

@@ -58,38 +58,60 @@ export class AboutComponent {
     this.updateMainContent();
   }
 
+  navigating: boolean = false; // Flag to track navigation state
+
   constructor(private router: Router) { }
 
-  ngOnInit(): void {
-    // Scroll to the top of the page
-    window.scrollTo(0, 115);
+  // Code for working on scroll for mouse only not on trackpad
+  // @HostListener('window:wheel', ['$event'])
+  // onWheel(event: WheelEvent) {
+  //   if (event.deltaY > 0) {
+  //     // Navigate to the next page (about page) and set the transition flag
+  //     setTimeout(() => {
+  //     this.router.navigateByUrl('/projects');
+  //     }, 500); // Adjust the delay as needed
+  //   } else if (event.deltaY < 0) {
+  //     // Navigate to the previous page (home page)
+  //     setTimeout(() => {
+  //       this.router.navigateByUrl('');
+  //     }, 500); // Adjust the delay as needed
+  //   }
+  // }
+
+  // Debounce function for scroll events
+  debounce(callback: Function, delay: number) {
+    let timeout: any;
+    return function(this: any, ...args: any[]) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        callback.apply(this, args);
+      }, delay);
+    };
   }
 
+  // Debounce the onWheel function
+  debouncedOnWheel = this.debounce((event: WheelEvent) => {
+    if (!this.navigating) {
+      if (event.deltaY > 0) {
+        // Navigate to the next page (about page) after debounce and set the transition flag
+        this.navigating = true;
+        this.router.navigateByUrl('/projects');
+      } else if (event.deltaY < 0) {
+        // Navigate to the previous page (home page) after debounce and set the transition flag
+        this.navigating = true;
+        this.router.navigateByUrl('');
+      }
 
-  @HostListener('window:scroll', ['$event'])
-  onScroll(event: any) {
-    // Get the height of the document, including any overflow content
-    const documentHeight = document.documentElement.scrollHeight;
-
-    // Get the height of the viewport
-    const viewportHeight = window.innerHeight;
-
-    // Get the current scroll position
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-    console.log(scrollPosition);
-
-    // Calculate the position at the end of the Home component
-    const endOfHomePosition = documentHeight - viewportHeight;
-
-    // Define a threshold (e.g., 90% of the Home component height)
-    const downThreshold = 0.90 * endOfHomePosition;
-
-    const upThreshold = 0.10 * endOfHomePosition;
-
-    if (scrollPosition >= downThreshold) {
-      this.router.navigateByUrl('/projects');
-    } else if (scrollPosition <= upThreshold) {
-      this.router.navigateByUrl('/'); // Navigate back to the About component
+      // Reset navigation flag after a delay
+      setTimeout(() => {
+        this.navigating = false;
+      }, 300); // Adjust the delay as needed
     }
+
+  }, 300); // Adjust the delay as needed
+
+  @HostListener('window:wheel', ['$event'])
+  onWheel(event: WheelEvent) {
+    this.debouncedOnWheel(event);
   }
 }

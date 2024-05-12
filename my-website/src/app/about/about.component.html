@@ -11,17 +11,17 @@
   <header>
     <h1 class="name">Saran Kumar Ramesh</h1>
     <span></span> <!-- Separator -->
-    <p class="quote">"Code is a language of possibility, where ideas become reality"</p>
+    <p class="quote">"The best thing about a boolean is even if you are wrong, you are only off by a bit."</p>
   </header>
 
   <!-- Navigation -->
   <nav class="nav-container">
     <ul>
-      <li><a routerLink="/"><img src="../../assets/11.png" alt="Home"></a> <a routerLink="/">Home</a></li>
-      <li><a routerLink="/about"><img src="../../assets/4.png" alt="About"></a> <a routerLink="/about">About</a></li>
-      <li><a routerLink="/projects"><img src="../../assets/5.png" alt="Projects/Skills"></a> <a routerLink="/projects">Projects/Skills</a></li>
-      <li><a routerLink="/experience"><img src="../../assets/9.png" alt="Experience/Education"></a> <a routerLink="/experience">Experience/Education</a></li>
-      <li><a routerLink="/contact"><img src="../../assets/14.png" alt="Contact Me"></a> <a routerLink="/contact">Contact Me</a></li>
+      <li><a routerLink="/"><img src="../../assets/nav-home.png" alt="Home"></a> <a routerLink="/">Home</a></li>
+      <li><a routerLink="/about"><img src="../../assets/nav-about.png" alt="About"></a> <a routerLink="/about">About</a></li>
+      <li><a routerLink="/projects"><img src="../../assets/nav-prjsk.png" alt="Projects/Skills"></a> <a routerLink="/projects">Projects/Skills</a></li>
+      <li><a routerLink="/experience"><img src="../../assets/nav-eduexp.png" alt="Experience/Education"></a> <a routerLink="/experience">Experience/Education</a></li>
+      <li><a routerLink="/contact"><img src="../../assets/nav-contactme.png" alt="Contact Me"></a> <a routerLink="/contact">Contact Me</a></li>
     </ul>
   </nav>
 
@@ -31,13 +31,14 @@
     <section>
       <h2 class="main-content">{{ mainContent }}</h2>
 
-      <p>Click one or more of the below technologies to mix and match my skills,</p>
-
       <div class="design-buttons">
         <button [class.active]="frontendClicked" (click)="toggleFrontend()">Frontend</button>
         <button [class.active]="backendClicked" (click)="toggleBackend()">Backend</button>
         <button [class.active]="devopsClicked" (click)="toggleDevops()">DevOps</button>
       </div>
+
+      <p>Click one or more of the above technologies to mix and match my skills</p>
+
     </section>
   </main>
 

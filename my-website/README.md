@@ -27,9 +27,10 @@ Getting Started
 1.	Clone this repository to your local machine.
 2.	Install Node.js if not already installed.
 3.	Navigate to the project directory and run npm install to install dependencies.
-6.  Run node server.js in the command prompt or terminal first. This starts the server  that listens on port 3000, and keep it running.
-5.	Run ng serve to start the development server.
-6.	Access the website at http://localhost:4200.
+4.  You might also need to install the nodemailer like "npm install nodemailer"
+5.  Run node server.js in the command prompt or terminal first. This starts the server  that listens on port 3000, and keep it running.
+6.	Run ng serve in an another terminal to start the development server.
+7.	Access the website at http://localhost:4200.
 
 
 Future Work

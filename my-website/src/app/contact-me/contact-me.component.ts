@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact-me',
@@ -8,30 +9,75 @@ import { Router } from '@angular/router';
 })
 export class ContactMeComponent {
 
-  constructor(private router: Router) { }
+  formData: any = {}; // Object to store form data
+  emailSent: boolean = false; // Track if email has been sent
 
-  // @HostListener('window:scroll', ['$event'])
-  // onScroll(event: any) {
-  //   // Get the height of the document, including any overflow content
-  //   const documentHeight = document.documentElement.scrollHeight;
+  navigating: boolean = false; // Flag to track navigation state
 
-  //   // Get the height of the viewport
-  //   const viewportHeight = window.innerHeight;
+  constructor(private router: Router, private http: HttpClient) { }
 
-  //   // Get the current scroll position
-  //   const scrollPosition = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-  //   console.log(scrollPosition);
+  submitForm(contactForm: any) {
+    if (contactForm.valid) {
+      // Form is valid, submit data or perform other actions
+      const formData = {
+        name: contactForm.value.name,
+        email: contactForm.value.email,
+        requirements: contactForm.value.requirements
+      };
 
-  //   // Calculate the position at the end of the Home component
-  //   const endOfHomePosition = documentHeight - viewportHeight;
+      this.http.post('http://localhost:3000/api/send-email', formData)
+      .subscribe({
+        next: () => {
+          console.log('Email sent successfully');
+          this.emailSent = true; // Set emailSent flag to true
+          // Optionally, display a success message to the user
+        },
+        error: (error: HttpErrorResponse) => {
+          if (error.status === 200) {
+            console.log('Email sent successfully');
+            this.emailSent = true; // Set emailSent flag to true
+            // Optionally, display a success message to the user
+          } else {
+            console.error('Error sending email:', error.status, error.statusText);
+            // Optionally, display an error message to the user
+          }
+        }
+      });
+    }
+  }
 
-  //   const upThreshold = 0.10 * endOfHomePosition;
-  //   console.log(scrollPosition);
+  // Debounce function for scroll events
+  debounce(callback: Function, delay: number) {
+    let timeout: any;
+    return function(this: any, ...args: any[]) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        callback.apply(this, args);
+      }, delay);
+    };
+  }
 
-  //   if (scrollPosition <= upThreshold) {
-  //     this.router.navigateByUrl('/experience'); // Navigate back to the About component
-  //   }
-  // }
+  // Debounce the onWheel function
+  debouncedOnWheel = this.debounce((event: WheelEvent) => {
+    if (!this.navigating) {
+      if (event.deltaY < 0) {
+        // Navigate to the previous page (home page) after debounce and set the transition flag
+        this.navigating = true;
+        this.router.navigateByUrl('/experience');
+      }
+
+      // Reset navigation flag after a delay
+      setTimeout(() => {
+        this.navigating = false;
+      }, 300); // Adjust the delay as needed
+    }
+
+  }, 300); // Adjust the delay as needed
+
+  @HostListener('window:wheel', ['$event'])
+  onWheel(event: WheelEvent) {
+    this.debouncedOnWheel(event);
+  }
 }
 
 

@@ -1,6 +1,6 @@
 html {
-  width: 100%;
-  height: 105vh;
+  width: 100vw;
+  height: 100vh;
   background-color: black;
 }
 
@@ -18,14 +18,14 @@ html {
 
 header {
   position: relative; /* Make the header relative to control absolutely positioned elements */
-  width: 100%;
+  width: 100vw;
   z-index: 1;
 }
 
 .iframe-container {
   position: absolute; /* Make the iframe fixed to ensure it covers the entire viewport */
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   border: none;
   top: 0;
   left: 0;
@@ -51,29 +51,29 @@ h1, p {
 /* Header */
 
 header {
-  padding: 20px; /* Add padding to provide some space around the content */
+  padding: 0.5vw; /* Add padding to provide some space around the content */
   color: wheat; /* Set text color to wheat */
-  margin-top: 30px;
+  margin-top: 1vw;
   text-align: center;
 }
 
 .name {
   display: inline;
-  font-size: 35px; /* Adjust font size as needed */
+  font-size: 1.4vw; /* Adjust font size as needed */
 }
 
 header span {
   display: inline-block; /* Make the span an inline-block element */
-  width: 2px; /* Set the width of the separator */
-  height: 30px; /* Set the height of the separator */
+  width: 0.1vw; /* Set the width of the separator */
+  height: 1.2vw; /* Set the height of the separator */
   background-color: wheat; /* Set the color of the separator */
-  margin: 0 90px; /* Add margin to the sides of the separator */
+  margin: 0 2vw; /* Add margin to the sides of the separator */
 }
 
 .quote {
   display: inline;
   font-style: italic;
-  font-size: 25px;
+  font-size: 1.05vw;
   text-align: center;
 }
 
@@ -81,10 +81,10 @@ header span {
 
 .nav-container {
   position: fixed; /* Fix the navigation bar to the viewport */
-  top: 100px; /* Adjust the distance from the top based on your header height */
+  top: 3.3vw; /* Adjust the distance from the top based on your header height */
   left: 0; /* Align the navigation bar to the left */
   width: 20%; /* Set the width of the navigation bar */
-  padding: 20px; /* Add padding to the navigation bar */
+  padding: 2vw; /* Add padding to the navigation bar */
   opacity: 80%;
 }
 
@@ -101,18 +101,18 @@ header span {
 }
 
 .nav-container ul li {
-  padding: 20px 50px;
+  padding: 0.8vw 3vw;
   text-align: center;
-  font-size: 25px;
-  border-bottom: 1px solid wheat; /* Add a solid wheat-colored border bottom */
+  font-size: 1vw;
+  border-bottom: 0.1vw solid wheat; /* Add a solid wheat-colored border bottom */
 }
 
 img {
   display: block; /* Ensure the images are displayed as blocks */
   margin: 0 auto; /* Automatically center the images horizontally */
   background-color: wheat;
-  width: 120px;
-  height: 120px;
+  width: 4.8vw;
+  height: 4.8vw;
 }
 
 .nav-container ul li:last-child {
@@ -123,47 +123,47 @@ img {
 
 main {
   left: 20%; /* Position main content 20% from the left */
-  top: 30px; /* Position main content 100px from the top */
+  top: 1.3vw; /* Position main content 100px from the top */
   width: 80%; /* Occupy 80% of the width */
-  min-height: calc(100vh - 250px); /* Set minimum height to fill remaining viewport height after considering header and footer */
-  padding: 20px; /* Add padding to provide space around the content */
+  min-height: calc(100vh - 10vw); /* Set minimum height to fill remaining viewport height after considering header and footer */
+  padding: 1vw; /* Add padding to provide space around the content */
   color: wheat; /* Set text color to wheat */
-  border: 1px solid wheat; /* Add border */
+  border: 0.07vw solid wheat; /* Add border */
 
   /* Center align contents horizontally and vertically */
   display: flex;
   justify-content: center; /* Center contents horizontally */
   align-items: center; /* Center contents vertically */
-  padding-left: 75px;
-  padding-right: 75px;
+  padding-left: 3vw;
+  padding-right: 3vw;
 
   background-color: rgba(0, 0, 0, 0.5); /* Set background color with 50% opacity */
 }
 
 .skill-seperator {
   display: inline-block; /* Make the span an inline-block element */
-  width: 2px; /* Set the width of the separator */
-  height: 600px; /* Set the height of the separator */
+  width: 0.2vw; /* Set the width of the separator */
+  height: 23vw; /* Set the height of the separator */
   background-color: wheat; /* Set the color of the separator */
-  margin: 0 90px; /* Add margin to the sides of the separator */
+  margin: 0 3vw; /* Add margin to the sides of the separator */
+  margin-top: 6vw;
 }
 
 /* Skill bar */
 
 .skill-bar {
   display: inline-block;
-  margin-left: 100px; /* Add some spacing between the skill text and the skill bar */
-  width: 200px; /* Set the width of the skill bar */
-
+  margin-left: 7vw; /* Add some spacing between the skill text and the skill bar */
+  width: 14vw; /* Set the width of the skill bar */
 }
 
 .skill-bar::before{
   content: "";
   display: inline-block;
-  height: 6px; /* Set the height of the skill bar */
-  width: 350px; /* Set the width of the skill bar to 80% of the container width */
+  height: 0.2vw; /* Set the height of the skill bar */
+  width: 15vw; /* Set the width of the skill bar to 80% of the container width */
   background: linear-gradient(to right, wheat 90%, rgb(86, 85, 85) 90%); /* Use a linear gradient for the background color */
-  margin-right: 5px; /* Add some spacing between the skill bar and the percentage text */
+  margin-right: 0.1vw; /* Add some spacing between the skill bar and the percentage text */
 }
 
 /* Style for span item individual percentage change appearance */
@@ -183,12 +183,12 @@ main {
 /* Skills section in main content */
 
 .skills-section {
-  width: 2500px;
+  width: 100vw;
 }
 
 .skills-section h2 {
-  padding-bottom: 80px; /* Add padding to the top and bottom */
-  font-size: 50px; /* Change font size */
+  padding-bottom: 3vw; /* Add padding to the top and bottom */
+  font-size: 2vw; /* Change font size */
   text-align: center; /* Center align the text */
 }
 
@@ -199,27 +199,26 @@ main {
 }
 
 .skills-section ul li {
-  padding: 30px 0;
-  margin-left: 80px;
-  font-size: 18px;
+  padding: 1.3vw 0;
+  margin-left: 3vw;
+  font-size: 1vw;
   text-align: left;
-  font-size: 25px;
-  text-indent: -45px;
+  text-indent: -3vw;
 }
 
 .skills-section ul li span:first-child {
-  font-size: 25px;
-  line-height: 1.5;
+  font-size: 1.1vw;
+  line-height: 1.5vw;
   font-weight: bold;
   text-decoration: underline;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.1vw;
 }
 
 /* Projects section in main content */
 
 .projects-section h2 {
-  padding-bottom: 80px; /* Add padding to the top and bottom */
-  font-size: 50px; /* Change font size */
+  padding-bottom: 3vw; /* Add padding to the top and bottom */
+  font-size: 2vw; /* Change font size */
   text-align: center; /* Center align the text */
 }
 
@@ -230,31 +229,30 @@ main {
 }
 
 .projects-section ul li {
-  padding: 30px 0;
-  margin-left: 80px;
-  font-size: 18px;
+  padding: 1.1vw 0;
+  margin-left: 3vw;
   text-align: left;
-  font-size: 25px;
-  text-indent: -50px;
-  line-height: 45px;
+  font-size: 1vw;
+  text-indent: -2.5vw;
+  line-height: 2vw;
 }
 
 .projects-section ul li span:first-child {
-  font-size: 25px;
-  line-height: 1.5;
+  font-size: 1.1vw;
+  line-height: 2vw;
   font-weight: bold;
   text-decoration: underline;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.1vw;
 }
 
 /* Footer */
 
 footer {
-  width: 100%; /* Take up the full width of the viewport */
-  padding: 20px; /* Add padding to the footer */
-  margin-top: 60px; /* Add some margin at the top to separate it from the main content */
+  width: 100vw; /* Take up the full width of the viewport */
+  padding: 0.6vw; /* Add padding to the footer */
+  margin-top: 2.33vw; /* Add some margin at the top to separate it from the main content */
   color: wheat; /* Set text color */
-  font-size: 23px; /* Set font size */
+  font-size: 0.95vw; /* Set font size */
   text-align: center; /* Center-align the text */
   font-weight: 400;
 }
