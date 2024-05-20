@@ -147,10 +147,15 @@ main {
 }
 
 main p {
-  font-size: 0.85vw;
+  font-size: 1vw;
   text-align: center; /* Center-align the paragraph text */
   padding-top: 1vw; /* Add padding to the top of the paragraph */
   font-style: italic; /* Italicize the font */
+  font-weight: 400;
+}
+
+main span {
+  font-weight: 800;
 }
 
 /* Buttons */

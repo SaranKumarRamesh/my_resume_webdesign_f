@@ -169,15 +169,15 @@ main {
 /* Style for span item individual percentage change appearance */
 
 .skill-bar:nth-child(4)::before {
-  background: linear-gradient(to right, wheat 87%, rgb(86, 85, 85) 87%);
+  background: linear-gradient(to right, wheat 80%, rgb(86, 85, 85) 80%);
 }
 
 .skill-bar:nth-child(6)::before {
-  background: linear-gradient(to right, wheat 95%, rgb(86, 85, 85) 95%);
+  background: linear-gradient(to right, wheat 90%, rgb(86, 85, 85) 90%);
 }
 
 .skill-bar:nth-child(8)::before {
-  background: linear-gradient(to right, wheat 80%, rgb(86, 85, 85) 80%);
+  background: linear-gradient(to right, wheat 70%, rgb(86, 85, 85) 70%);
 }
 
 /* Skills section in main content */
